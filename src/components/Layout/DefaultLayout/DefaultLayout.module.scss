@@ -1,0 +1,11 @@
+.container {
+    margin: 0 auto;
+    display: flex;
+    width: var(--default-layout-width);
+}
+.sidebar {
+    width: 356px;
+}
+.content {
+    flex: 1;
+}
