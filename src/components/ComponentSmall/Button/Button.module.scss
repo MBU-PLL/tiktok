@@ -1,0 +1,75 @@
+.btn {
+    font-size: 1.4rem;
+    padding: 6px 10px;
+    font-weight: 500;
+    line-height: 22px;
+    min-width: 110px;
+    border-radius: 4px;
+    text-align: center;
+    border: 1px solid var(--border-btn-silver);
+    background-color: white;
+    cursor: pointer;
+    &:hover {
+        background-color: var(--default-color-hover);
+    }
+    + .btn {
+        margin-left: 8px;
+    }
+    // ! disable button
+    &.disable {
+        pointer-events: none;
+        opacity: 0.5;
+    }
+}
+// ! type button : primary , outline
+.btn.primary {
+    background-color: var(--primary-color);
+    color: white;
+    &:hover {
+        background-color: var(--primary-color-hover);
+    }
+}
+.btn.outline {
+    border-color: var(--primary-color);
+    background-color: white;
+    color: var(--primary-color);
+    &:hover {
+        background-color: var(--outline-color-hover);
+        border-color: var(--primary-color);
+    }
+}
+// ! size button: small, large, normal is default
+.large {
+    min-width: 140px;
+    border-radius: 8px;
+    font-size: 1.7rem;
+    padding: 10px 10px;
+    line-height: 26px;
+    font-weight: 600;
+}
+.small {
+    min-width: 88px;
+    border-radius: 4px;
+    padding: 3px 10px;
+    font-size: 1.3rem;
+    line-height: 20px;
+    font-weight: 500;
+}
+// ! have radius for button custom
+.rounded.large {
+    border-radius: 24px;
+}
+.rounded {
+    border-radius: 18px;
+}
+.rounded.small {
+    border-radius: 16px;
+}
+
+// ! css cho thang phia sau
+// * dấu + là khi có 2 class icon và title ngang hàng thì thằng phía sau sẽ chịu css
+// * === chọn class title đứng liền kề sau class icon
+.icon + .title,
+.title + .icon {
+    margin-left: 8px;
+}
