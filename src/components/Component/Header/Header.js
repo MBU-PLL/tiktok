@@ -15,10 +15,10 @@ import {
 
 // small component
 import Button from '~/Components/ComponentSmall/Button/Button';
-import Popper from '~/Components/ComponentSmall/Popper/Popper';
-import AccountItem from '~/Components/ComponentSmall/AccountItem/AccountItem';
 
-import Tippy from '@tippyjs/react/headless';
+import PopperSearch from '~/Components/ComponentSmall/Popper/PopperSearch/PopperSearch';
+import PopperMenuAction from '~/Components/ComponentSmall/Popper/PopperMenuAction/PopperMenuAction';
+
 // import 'tippy.js/dist/tippy.css'; // optional
 import { useEffect, useState } from 'react';
 
@@ -37,22 +37,7 @@ function Header() {
                 <div className={cx('logo')}>
                     <img src={images.logo} alt="TikTok" />
                 </div>
-
-                <Tippy
-                    interactive
-                    visible={searchResult.length > 0}
-                    render={(attrs) => (
-                        <div className={cx('search-result')} tabIndex="-1" {...attrs}>
-                            <Popper>
-                                <h4 className={cx('search-title')}>Tài khoản</h4>
-                                <AccountItem nickName="datvilla94" fullName="Đạt Villa" check />
-                                <AccountItem nickName="ducmom2002" fullName="Đức Mõm TV" />
-                                <AccountItem nickName="duythamchannel" fullName="Duy Thẩm" check />
-                                <p className={cx('search-more')}>Xem tất cả kết quả dành cho "d"</p>
-                            </Popper>
-                        </div>
-                    )}
-                >
+                <PopperSearch searchResult={searchResult}>
                     <div className={cx('search')}>
                         <input
                             className={cx('search-input')}
@@ -67,13 +52,17 @@ function Header() {
                             <FontAwesomeIcon icon={faMagnifyingGlass} />
                         </button>
                     </div>
-                </Tippy>
+                </PopperSearch>
                 <div className={cx('actions')}>
                     <Button outline leftIcon={<FontAwesomeIcon icon={faPlus} />}>
                         Tải lên
                     </Button>
                     <Button primary>Đăng nhập</Button>
-                    <FontAwesomeIcon id="popper" icon={faEllipsisVertical} className={cx('action-more')} />
+                    <PopperMenuAction>
+                        <button className={cx('action-more')}>
+                            <FontAwesomeIcon icon={faEllipsisVertical} />
+                        </button>
+                    </PopperMenuAction>
                 </div>
             </div>
         </header>

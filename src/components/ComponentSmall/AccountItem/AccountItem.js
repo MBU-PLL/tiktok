@@ -18,7 +18,7 @@ function AccountItem(props) {
             <div className={cx('info')}>
                 <h4 className={cx('nick')}>
                     <span>{props.nickName}</span>
-                    {props.check && <FontAwesomeIcon className={cx('check-icon')} icon={faCircleCheck} />}
+                    {props.check && _icon}
                 </h4>
                 <p className={cx('full-name')}>{props.fullName}</p>
             </div>

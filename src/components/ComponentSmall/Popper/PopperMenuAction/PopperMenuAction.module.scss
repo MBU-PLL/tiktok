@@ -1,0 +1,71 @@
+.content {
+    min-width: 220px;
+}
+.list-menu {
+    padding: 8px;
+}
+.menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 12px 10px 12px;
+    &:hover {
+        cursor: pointer;
+        background-color: var(--outline-color-hover);
+        color: var(--primary-color);
+        border-radius: 4px;
+    }
+    &:last-child {
+        // cursor: default;
+        background-color: transparent;
+        border: 1px solid;
+        border-color: var(--border-btn-silver) transparent transparent transparent;
+        border-radius: 0;
+        margin-top: 4px;
+    }
+    svg {
+        width: 16px;
+    }
+    span {
+        font-size: 1.4rem;
+        flex: 1;
+        margin: 0 8px;
+    }
+}
+.btn-switch {
+    position: relative;
+    height: 24px;
+    width: 44px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+.switch-icon {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    border-radius: 10px;
+    background-color: white;
+    top: 2px;
+    left: -6px;
+}
+// header of title children menu
+.header-title {
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: 1px solid;
+    border-color: transparent transparent var(--border-btn-silver) transparent;
+    cursor: pointer;
+    &:hover {
+        color: var(--primary-color);
+    }
+    svg {
+        width: 16px;
+        margin-right: 8px;
+    }
+    span {
+        flex: 1;
+    }
+}

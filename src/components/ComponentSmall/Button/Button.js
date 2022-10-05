@@ -11,6 +11,7 @@ const Button = forwardRef((props, ref) => {
         className,
         primary,
         outline,
+        link,
         small,
         large,
         rounded,
@@ -32,7 +33,6 @@ const Button = forwardRef((props, ref) => {
                 delete PROPS[key];
             }
         });
-        console.log(Object.keys(PROPS));
     }
     //! change Link or 'a' when insert to or href
     if (to) {
@@ -49,6 +49,7 @@ const Button = forwardRef((props, ref) => {
         [className]: className,
         primary,
         outline,
+        link,
         small,
         large,
         rounded,

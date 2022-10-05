@@ -38,6 +38,27 @@
         border-color: var(--primary-color);
     }
 }
+.btn.link {
+    color: black;
+    border-color: transparent;
+    font-size: 1.4rem;
+    font-weight: 400;
+    display: flex;
+    width: 100%;
+    margin-left: 0;
+    padding: 10px 12px 10px 12px;
+    .title {
+        flex: 1;
+        text-align: start;
+    }
+    svg {
+        width: 16px;
+    }
+    &:hover {
+        background-color: var(--outline-color-hover);
+        color: var(--primary-color);
+    }
+}
 // ! size button: small, large, normal is default
 .large {
     min-width: 140px;

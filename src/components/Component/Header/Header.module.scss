@@ -74,7 +74,7 @@
     border-bottom-right-radius: 23px;
     font-size: 1.8rem;
     margin-right: -20px;
-    // color: #a2a3a6;
+    background-color: transparent;
     color: rgba(22, 24, 35, 0.34);
     &:hover {
         cursor: pointer;
@@ -87,35 +87,11 @@
 .actions {
     display: flex;
     align-items: center;
-    .btn-login {
-        margin-left: 16px;
-    }
     .action-more {
         font-size: 2rem;
-        margin: 0 24px;
+        padding: 0 8px;
+        margin: 0 12px;
         cursor: pointer;
-        position: relative;
-    }
-}
-
-// Search Result
-.search-result {
-    width: 360px;
-}
-.search-title {
-    font-size: 1.4rem;
-    line-height: 20px;
-    font-weight: 600;
-    color: var(--decription-color);
-    padding: 5px 12px;
-}
-.search-more {
-    padding: 12px 16px;
-    font-size: 1.6rem;
-    line-height: 22px;
-    font-weight: 400;
-    &:hover {
-        cursor: pointer;
-        background-color: var(--background-silver-color-hover);
+        background-color: transparent;
     }
 }
