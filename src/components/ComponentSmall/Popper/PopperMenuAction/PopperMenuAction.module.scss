@@ -2,7 +2,7 @@
     min-width: 220px;
 }
 .list-menu {
-    padding: 8px;
+    padding: 8px 0 8px 0;
 }
 .menu-item {
     display: flex;
@@ -15,14 +15,6 @@
         color: var(--primary-color);
         border-radius: 4px;
     }
-    &:last-child {
-        // cursor: default;
-        background-color: transparent;
-        border: 1px solid;
-        border-color: var(--border-btn-silver) transparent transparent transparent;
-        border-radius: 0;
-        margin-top: 4px;
-    }
     svg {
         width: 16px;
     }
@@ -31,6 +23,13 @@
         flex: 1;
         margin: 0 8px;
     }
+}
+.menu-item.border-top {
+    background-color: transparent;
+    border: 1px solid;
+    border-color: var(--border-btn-silver) transparent transparent transparent;
+    border-radius: 0;
+    margin-top: 4px;
 }
 .btn-switch {
     position: relative;
@@ -50,7 +49,7 @@
 }
 // header of title children menu
 .header-title {
-    padding: 10px 12px;
+    padding: 8px 12px;
     display: flex;
     align-items: center;
     font-size: 1.2rem;
@@ -58,6 +57,7 @@
     border: 1px solid;
     border-color: transparent transparent var(--border-btn-silver) transparent;
     cursor: pointer;
+    margin-bottom: 4px;
     &:hover {
         color: var(--primary-color);
     }

@@ -1,0 +1,30 @@
+.btn-theme {
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        width: 30px;
+        height: 20px;
+        border-radius: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 12px;
+        background-color: var(--primary-color);
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        border-radius: 8px;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 14px;
+        background-color: white;
+    }
+}
+.last-item {
+    border: 1px solid;
+    border-color: var(--border-btn-silver) transparent transparent transparent !important;
+    border-radius: 0;
+}

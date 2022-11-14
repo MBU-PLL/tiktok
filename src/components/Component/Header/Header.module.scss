@@ -12,78 +12,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 24px 0 20px;
 }
 .logo {
     display: flex;
     align-items: center;
 }
-.search {
-    width: 360px;
-    height: var(--height-header);
-    border-radius: 23px;
-    display: flex;
-    align-items: center;
-    background-color: #f1f0f3;
-    padding: 0 20px;
-    position: relative;
-    border: 1.5px solid transparent;
-    &::after {
-        content: '';
-        width: 1px;
-        height: calc(var(--height-header) - 18px);
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        right: var(--width-search-btn);
-        background-color: #d7d7d9;
-    }
-    &:focus-within {
-        border-color: rgba(22, 24, 35, 0.2);
-    }
-    button {
-        border: none;
-    }
-}
-.search-input {
-    font-size: 1.4rem;
-    border: none;
-    background-color: #f1f0f3;
-    outline: none;
-    flex: 1;
-    color: rgb(22, 24, 35);
-    height: 100%;
-    caret-color: var(--primary-color);
-    &:not(:placeholder-shown) ~ .search-btn {
-        color: rgba(22, 24, 35, 0.75);
-    }
-}
-.search-clear,
-.search-loading {
-    color: rgba(22, 24, 35, 0.34);
-    font-size: 1.6rem;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 46px;
-    margin-right: 16px;
-}
-.search-btn {
-    height: 100%;
-    width: var(--width-search-btn);
-    border-top-right-radius: 23px;
-    border-bottom-right-radius: 23px;
-    font-size: 1.8rem;
-    margin-right: -20px;
-    background-color: transparent;
-    color: rgba(22, 24, 35, 0.34);
-    &:hover {
-        cursor: pointer;
-        background-color: rgba(22, 24, 35, 0.03);
-    }
-    &:active {
-        background-color: rgba(22, 24, 35, 0.06);
-    }
-}
+
+// actions not login
 .actions {
     display: flex;
     align-items: center;
@@ -93,5 +29,43 @@
         margin: 0 12px;
         cursor: pointer;
         background-color: transparent;
+    }
+}
+.btn-upload + .login-account {
+    margin-left: 16px;
+}
+// account login
+.login-account {
+    display: flex;
+    align-items: center;
+    .btn-account {
+        width: 3.2rem;
+        height: 3.2rem;
+        background: transparent;
+        position: relative;
+        cursor: pointer;
+        .custom-icon {
+            margin-top: 3px;
+        }
+    }
+    .btn-account + .btn-account {
+        margin-left: 16px;
+    }
+    .btn-account + .avatar-login {
+        margin-left: 24px;
+    }
+
+    .message-info::after {
+        content: '' attr(num) '';
+        position: absolute;
+        left: 14px;
+        top: -3px;
+        width: 24px;
+        height: 14px;
+        background-color: var(--primary-color);
+        border-radius: 7px;
+        color: white;
+        font-size: 1rem;
+        line-height: 14px;
     }
 }

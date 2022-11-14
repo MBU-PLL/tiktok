@@ -4,13 +4,14 @@
     font-weight: 500;
     line-height: 22px;
     min-width: 110px;
-    border-radius: 4px;
+    border-radius: 2px;
     text-align: center;
     border: 1px solid var(--border-btn-silver);
     background-color: white;
     cursor: pointer;
     &:hover {
         background-color: var(--default-color-hover);
+        border-color: var(--border-btn-silver);
     }
     + .btn {
         margin-left: 8px;
@@ -42,11 +43,12 @@
     color: black;
     border-color: transparent;
     font-size: 1.4rem;
-    font-weight: 400;
+    font-weight: 500;
     display: flex;
+    align-items: center;
     width: 100%;
     margin-left: 0;
-    padding: 10px 12px 10px 12px;
+    padding: 8px 12px 8px 16px;
     .title {
         flex: 1;
         text-align: start;
@@ -55,8 +57,7 @@
         width: 16px;
     }
     &:hover {
-        background-color: var(--outline-color-hover);
-        color: var(--primary-color);
+        background-color: var(--default-color-hover);
     }
 }
 // ! size button: small, large, normal is default
@@ -86,7 +87,9 @@
 .rounded.small {
     border-radius: 16px;
 }
-
+.icon {
+    height: 20px;
+}
 // ! css cho thang phia sau
 // * dấu + là khi có 2 class icon và title ngang hàng thì thằng phía sau sẽ chịu css
 // * === chọn class title đứng liền kề sau class icon

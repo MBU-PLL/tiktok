@@ -9,12 +9,11 @@ import { useState } from 'react';
 import { faMoon, faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
 import Button from '~/Components/ComponentSmall/Button/Button';
-import { MENU } from '~/Components/ComponentSmall/MenuItem/MenuTree';
 
 const cx = classNames.bind(styles);
 
-function PopperMenuAction({ children }) {
-    const [menuArray, setMenuArray] = useState([MENU]);
+function PopperMenuAction({ children, menuList }) {
+    const [menuArray, setMenuArray] = useState([menuList]);
     const [title, setTitle] = useState('');
     const menuCurrent = menuArray[menuArray.length - 1].data;
     const showTitleBack = () => {
@@ -31,29 +30,37 @@ function PopperMenuAction({ children }) {
             </div>
         );
     };
-    const renderMenuTree = () => {
-        if (menuArray.length > 1) {
-            return (
-                <>
-                    {showTitleBack()}
-                    {renderMenu()}
-                </>
-            );
-        } else {
-            return renderMenu();
-        }
+    // eslint-disable-next-line
+    const showButtonTheme = () => {
+        return (
+            <>
+                <li className={cx('menu-item', 'border-top')}>
+                    <FontAwesomeIcon icon={faMoon} />
+                    <span>Chế độ tối</span>
+                    <button className={cx('btn-switch')}>
+                        <span className={cx('switch-icon')} />
+                    </button>
+                </li>
+            </>
+        );
     };
-    const renderMenu = () => {
+    const showMenu = () => {
         return menuCurrent.map((current, index) => {
             const haveChildren = !!current.children;
             const btnClick = () => {
                 if (haveChildren) {
                     setMenuArray((prev) => [...prev, current.children]);
                     setTitle(current.children.type);
+                } else {
+                    if (current.click) {
+                        current.click();
+                    }
                 }
             };
+            const _className = current.className || '';
             return (
                 <Button
+                    className={_className}
                     key={index}
                     link
                     leftIcon={current.icon}
@@ -67,29 +74,32 @@ function PopperMenuAction({ children }) {
             );
         });
     };
+    const renderMenuList = () => {
+        if (menuArray.length > 1) {
+            return (
+                <>
+                    {showTitleBack()}
+                    {showMenu()}
+                </>
+            );
+        } else {
+            return <>{showMenu()}</>;
+        }
+    };
+
     return (
         <Tippy
             onHide={() => {
-                setMenuArray([MENU]);
+                setMenuArray([menuList]);
             }}
+            // visible
             interactive
             delay={[0, 700]}
             placement="bottom-end"
             render={(attrs) => (
                 <div className={cx('content')} tabIndex="-1" {...attrs}>
                     <Popper>
-                        <ul className={cx('list-menu')}>
-                            {renderMenuTree()}
-                            {menuArray.length < 2 && (
-                                <li className={cx('menu-item')}>
-                                    <FontAwesomeIcon icon={faMoon} />
-                                    <span>Chế độ tối</span>
-                                    <button className={cx('btn-switch')}>
-                                        <span className={cx('switch-icon')} />
-                                    </button>
-                                </li>
-                            )}
-                        </ul>
+                        <ul className={cx('list-menu')}>{renderMenuList()}</ul>
                     </Popper>
                 </div>
             )}

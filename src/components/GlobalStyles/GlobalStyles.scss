@@ -11,12 +11,13 @@
     --background-silver-color: rgba(22, 24, 35, 0.03);
     --background-silver-color-hover: rgb(241, 240, 243);
 
-    --border-btn-silver: rgba(22, 24, 35, 0.12);
+    --border-btn-silver: rgba(22, 24, 35, 0.2);
 
     // Default Layout
     --default-layout-header-height: 60px;
     --default-layout-width: 1150px;
 }
+// css body
 * {
     margin: 0;
     padding: 0;
@@ -40,4 +41,10 @@ input,
 }
 a[href] {
     text-decoration: none;
+}
+
+// change line-height, padding of tippy-content default
+.tippy-content {
+    padding: 8px;
+    line-height: 22px;
 }
